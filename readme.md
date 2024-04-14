@@ -94,4 +94,4 @@ Warning: These can be uncommented and tested, but might pose problems.
 
 Uncomments can be done like this:
 1. In Top_Gaining_Stocks, go to main.py and uncomment values_list, stock_df, stock_df.to_csv and getting_gaining_stocks() to webscrape. \
-2. In SMP500, go to main_smp500.py, uncomment raw, smp500_df and smp500_df.to_csv to webscrape
+2. In SMP500, go to main_smp500.py, uncomment raw, smp500_df and smp500_df.to_csv to webscrape. Furthermore, go to model.py and uncomment MLP
