@@ -37,7 +37,6 @@ def Kalman_filtering(dataset):
     stock_df['closing_volume_traded'] = pd.to_numeric(stock_df['closing_volume_traded'].str.replace(',', ''), errors='coerce')
     closing_volume_traded = np.array(stock_df['closing_volume_traded'])
 
-    # Initialize the Kalman Filter
     kf = KalmanFilter(
         initial_state_mean=closing_volume_traded[0],  # initial volume traded
         initial_state_covariance=0.1,  # small uncertainty in initial state
@@ -50,7 +49,6 @@ def Kalman_filtering(dataset):
     # Use the observed values of the price to get a rolling mean
     state_means, _ = kf.filter(closing_volume_traded)
 
-    # Plot original observation and estimated mean
     plt.plot(state_means)
     plt.plot(closing_volume_traded)
     plt.title('Kalman filter estimate of average')
